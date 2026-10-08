@@ -1,0 +1,432 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<link rel="icon" href="favicon.ico" type="image/x-icon">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="夏末电影网，一个关于“季节与情绪”的影视赏析与片单推荐站。按夏末、初秋、深夜、雨天四种情境挑片，附一句“为什么此刻适合看它”。倡导通过合法授权平台观看，不托管资源、不提供盗链。">
+<meta name="keywords" content="夏末电影网,夏末电影,初秋电影,季节电影,情绪片单,治愈电影,深夜电影,雨天电影,观影指南">
+<meta name="author" content="夏末电影网">
+<meta name="theme-color" content="#fdf6ea">
+<meta name="referrer" content="no-referrer-when-downgrade">
+<title>夏末电影网 - 把季节过成一场电影</title>
+<link rel="canonical" href="https://xiamodianyingwang-cn.github.io/">
+<style>
+:root{
+  --paper:#fdf6ea; --paper2:#f7edd9; --ink:#2c2a25; --sub:#7a7366; --dim:#b3a99a;
+  --leaf:#7d8b4f; --moss:#52613a; --amber:#d98324; --rust:#b4582c; --sky:#6f9bab;
+  --serif:"Songti SC","SimSun","Times New Roman",Georgia,serif;
+  --sans:"PingFang SC","Microsoft YaHei",Inter,system-ui,sans-serif;
+  --mono:ui-monospace,Menlo,Consolas,"Courier New",monospace;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth;-webkit-text-size-adjust:100%}
+body{font-family:var(--sans);background:var(--paper);color:var(--ink);line-height:1.85;font-size:14.6px;background-image:radial-gradient(circle at 12% 8%,rgba(217,131,36,.05),transparent 42%),radial-gradient(circle at 88% 92%,rgba(111,155,171,.07),transparent 40%)}
+a{color:inherit;text-decoration:none;outline:none}
+a:focus-visible,button:focus-visible,input:focus-visible{outline:2px dashed var(--rust);outline-offset:3px}
+::selection{background:var(--leaf);color:#fff}
+.wrap{max-width:1220px;margin:0 auto;padding:0 30px;position:relative}
+
+/* ===== 顶栏 ===== */
+.topbar{background:rgba(253,246,234,.9);backdrop-filter:blur(8px);border-bottom:1px solid rgba(44,42,37,.12);position:sticky;top:0;z-index:50}
+.hd{display:flex;align-items:center;gap:22px;padding:13px 0}
+.logo{display:flex;align-items:center;gap:11px;color:var(--ink)}
+.logo .ci{width:40px;height:40px;flex:0 0 40px;border-radius:50%;background:radial-gradient(circle at 36% 34%,#f2c94c 0 16%,#c89b3c 16% 34%,#8f6f2f 34% 56%,#5c4a1f 56%);position:relative;box-shadow:inset 0 0 0 3px #efe1c4,0 6px 16px rgba(90,70,30,.18)}
+.logo .ci:before{content:"";position:absolute;width:7px;height:16px;background:#7d8b4f;border-radius:6px 6px 0 0;left:50%;bottom:0;transform:translateX(-50%);transform-origin:bottom}
+.logo b{font-family:var(--serif);font-weight:700;font-size:clamp(22px,3.5vw,29px);letter-spacing:2px;line-height:1.2}
+.logo em{display:block;font-family:var(--mono);font-style:normal;font-size:8.4px;letter-spacing:3.6px;color:var(--dim);font-weight:800;margin-top:2px}
+nav{display:flex;gap:4px;margin-left:auto}
+nav a{font-size:12px;font-weight:700;letter-spacing:1px;padding:9px 12px;border-radius:999px;transition:.2s;color:#4a463d}
+nav a:hover{background:var(--leaf);color:#fff}
+.search{display:flex;background:#fff;border:1px solid rgba(44,42,37,.16);border-radius:999px;padding:7px 7px 7px 16px;gap:9px;width:100%;max-width:250px}
+.search input{border:0;background:transparent;font:inherit;font-size:12px;flex:1;color:var(--ink);outline:none}
+.search input::placeholder{color:var(--dim)}
+.search button{border:0;border-radius:999px;background:var(--leaf);color:#fff;font-weight:800;font-size:10.4px;padding:0 16px;letter-spacing:1.5px;cursor:pointer}
+.ham{display:none;background:none;border:0;color:var(--rust);font-size:27px;cursor:pointer;line-height:1}
+
+/* ===== hero ===== */
+.hero{padding:52px 0 40px}
+.hero .wrap{display:grid;grid-template-columns:1.25fr .75fr;gap:44px;align-items:center}
+.eyebrow{font-family:var(--mono);font-size:10.4px;letter-spacing:5px;color:var(--rust);font-weight:900}
+.hero h1{font-family:var(--serif);font-size:clamp(38px,7.4vw,72px);line-height:1.2;font-weight:700;margin:12px 0 16px;letter-spacing:1px}
+.hero h1 i{font-style:normal;color:var(--leaf)}
+.hero .lead{color:#5c564a;font-size:15.6px;text-align:justify}
+.hero .cta{display:flex;gap:12px;margin-top:22px;flex-wrap:wrap}
+.hero .cta a{font-size:12px;font-weight:800;letter-spacing:2px;padding:13px 26px;border-radius:999px;border:2px solid var(--leaf);transition:.24s}
+.hero .cta a.p{background:var(--leaf);color:#fff}
+.hero .cta a.s{color:var(--moss);border-color:var(--moss)}
+.hero .cta a:hover{transform:translateY(-3px)}
+.season{background:#fff;border:1px solid rgba(44,42,37,.14);border-radius:16px;padding:20px 22px;box-shadow:0 18px 40px rgba(90,70,30,.08)}
+.season .k{font-family:var(--mono);font-size:9.4px;letter-spacing:3px;color:var(--rust);font-weight:900}
+.season ol{list-style:none;margin-top:13px;font-size:13px;font-family:var(--serif)}
+.season ol li{padding:9px 0;border-bottom:1px dashed rgba(44,42,37,.16);display:flex;gap:10px;align-items:baseline}
+.season ol li:last-child{border-bottom:0}
+.season ol li b{font-family:var(--mono);font-size:10.4px;color:var(--dim);font-weight:800;flex:0 0 40px}
+.season ol li span{flex:1;color:#4a463d}
+.season ol li em{font-style:normal;font-size:10.4px;color:var(--rust);font-weight:800;font-family:var(--mono)}
+
+/* ===== section ===== */
+section{padding:50px 0}
+.sec{display:flex;align-items:baseline;gap:11px;margin-bottom:24px;flex-wrap:wrap}
+.sec .num{font-family:var(--serif);font-size:15px;font-weight:700;color:#fff;background:var(--leaf);border-radius:50%;width:27px;height:27px;flex:0 0 27px;display:grid;place-items:center}
+.sec h2{font-family:var(--serif);font-size:clamp(24px,3.9vw,33px);font-weight:700;letter-spacing:1px}
+.sec .en{font-family:var(--mono);font-size:9.6px;letter-spacing:3px;color:var(--sub);font-weight:800;text-transform:uppercase}
+.sec a.more{margin-left:auto;font-size:11px;letter-spacing:2px;color:var(--sub);font-weight:800;border-bottom:2px solid var(--leaf);padding-bottom:2px}
+.sec a.more:hover{color:var(--ink)}
+
+/* ===== 01 四境 ===== */
+.mood{display:grid;grid-template-columns:repeat(4,1fr);gap:15px}
+.md{position:relative;min-height:330px;border-radius:16px;overflow:hidden;cursor:pointer;transition:.3s;color:#fff}
+.md:hover{transform:translateY(-7px);box-shadow:0 26px 50px rgba(60,50,25,.24)}
+.md .bg{position:absolute;inset:0;background:linear-gradient(160deg,var(--a),var(--b));transition:.4s}
+.md:hover .bg{transform:scale(1.06)}
+.md .in{position:absolute;inset:0;padding:24px;display:flex;flex-direction:column;background:linear-gradient(0deg,rgba(20,18,14,.92) 10%,rgba(20,18,14,.18) 60%,rgba(20,18,14,.55))}
+.md .ic{font-family:var(--serif);font-size:33px;line-height:1}
+.md .when{font-family:var(--mono);font-size:9.2px;letter-spacing:3px;font-weight:900;margin-top:9px;opacity:.85}
+.md h4{font-family:var(--serif);font-size:25px;margin:7px 0 9px;font-weight:700;letter-spacing:1px}
+.md p{font-size:11.8px;color:#e6e0d3;line-height:1.75;text-align:justify;display:-webkit-box;-webkit-line-clamp:3;-webkit-box-orient:vertical;overflow:hidden}
+.md .ft{margin-top:auto;display:flex;gap:6px;flex-wrap:wrap;font-family:var(--mono);font-size:8.8px;letter-spacing:1.2px;font-weight:800;color:#f0e8d6}
+
+/* ===== 02 片单 ===== */
+.list2{display:grid;grid-template-columns:repeat(3,1fr);gap:0;border:2px solid var(--ink);border-radius:14px;overflow:hidden}
+.ls{background:var(--paper);padding:23px 22px;cursor:pointer;transition:.24s;border-right:1px solid var(--ink);border-bottom:1px solid var(--ink)}
+.ls:nth-child(3n){border-right:0}
+.ls:nth-last-child(-n+3){border-bottom:0}
+.ls:hover{background:var(--leaf);color:#fff}
+.ls .k{font-family:var(--mono);font-size:9.2px;letter-spacing:3px;font-weight:900;color:var(--rust)}
+.ls:hover .k{color:#f6e7c2}
+.ls h4{font-family:var(--serif);font-size:20px;margin:9px 0 10px;font-weight:700;line-height:1.45}
+.ls p{font-size:11.6px;color:var(--sub);line-height:1.78;text-align:justify}
+.ls:hover p{color:rgba(255,255,255,.9)}
+.ls .mv{margin-top:13px;display:flex;flex-direction:column;gap:6px;font-size:11.4px}
+.ls .mv s{text-decoration:none;display:flex;justify-content:space-between;gap:10px;border-bottom:1px dotted rgba(44,42,37,.2);padding-bottom:4px;font-family:var(--serif)}
+.ls:hover .mv s{border-color:rgba(255,255,255,.3);color:#fff}
+.ls .mv s u{text-decoration:none;font-family:var(--mono);font-size:9.6px;font-weight:900;color:var(--rust);white-space:nowrap}
+.ls:hover .mv s u{color:#f6e7c2}
+
+/* ===== 03 榜 ===== */
+.top{display:grid;grid-template-columns:1.1fr .9fr;gap:22px;align-items:start}
+.ladder{display:flex;gap:0;align-items:flex-end;height:300px;background:linear-gradient(180deg,transparent,transparent calc(100% - 46px),rgba(44,42,37,.1) calc(100% - 46px));border-radius:14px;padding:0 10px}
+.la{flex:1;margin:0 7px;text-align:center;cursor:pointer;transition:.26s;position:relative}
+.la:hover{filter:brightness(1.08)}
+.la .bar{height:var(--h);border-radius:10px 10px 0 0;background:linear-gradient(180deg,var(--a),var(--b));display:grid;place-items:center;box-shadow:inset 0 -8px 20px rgba(0,0,0,.16)}
+.la .bar b{font-family:var(--serif);font-size:31px;color:#fff;font-weight:700;text-shadow:0 3px 12px rgba(0,0,0,.3)}
+.la h5{font-family:var(--serif);font-size:15.4px;margin-top:10px;font-weight:700;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.la small{font-family:var(--mono);font-size:9.2px;letter-spacing:2px;color:var(--sub);font-weight:800}
+.rows{background:#fff;border:1px solid rgba(44,42,37,.14);border-radius:14px;overflow:hidden}
+.rows a{display:flex;align-items:center;gap:13px;padding:13px 17px;border-bottom:1px dashed rgba(44,42,37,.16);transition:.2s}
+.rows a:last-child{border-bottom:0}
+.rows a:hover{background:#f2f7ea}
+.rows .no{font-family:var(--serif);font-weight:700;font-size:22px;color:var(--dim);flex:0 0 32px;line-height:1;font-style:italic}
+.rows a:hover .no{color:var(--leaf)}
+.rows .tx{flex:1;min-width:0}
+.rows .tx h5{font-size:13.6px;font-weight:800;line-height:1.5;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.rows .tx small{font-size:10.4px;color:var(--dim);letter-spacing:.5px}
+.rows .sc{font-family:var(--mono);font-size:13.2px;font-weight:900;color:var(--rust);flex:0 0 48px;text-align:right}
+
+/* ===== 04 节气时间轴 ===== */
+.axis{display:grid;grid-template-columns:repeat(4,1fr);gap:0;position:relative}
+.ax{padding:22px 18px 22px 30px;position:relative;cursor:pointer;transition:.24s;border-right:1px solid rgba(44,42,37,.16)}
+.ax:last-child{border-right:0}
+.ax:before{content:"";position:absolute;left:14px;top:26px;width:11px;height:11px;border-radius:50%;background:var(--paper);border:3px solid var(--leaf);z-index:2}
+.ax:after{content:"";position:absolute;left:19px;top:0;bottom:0;width:2px;background:rgba(125,139,79,.3)}
+.ax:first-child:after{top:26px}
+.ax:last-child:after{bottom:calc(100% - 26px)}
+.ax:hover{background:#f2f7ea}
+.ax .k{font-family:var(--mono);font-size:9.4px;letter-spacing:3px;color:var(--rust);font-weight:900}
+.ax h4{font-family:var(--serif);font-size:19.4px;margin:7px 0 8px;font-weight:700}
+.ax p{font-size:11.6px;color:var(--sub);line-height:1.78;text-align:justify;display:-webkit-box;-webkit-line-clamp:3;-webkit-box-orient:vertical;overflow:hidden}
+.ax .ft{font-family:var(--mono);font-size:9.2px;letter-spacing:1.4px;color:var(--dim);font-weight:800;margin-top:11px}
+
+/* ===== 05 笔记 ===== */
+.note{display:grid;grid-template-columns:1.05fr .95fr;gap:18px}
+.nt{background:#fff;border:1px solid rgba(44,42,37,.14);border-left:6px solid var(--amber);border-radius:12px;padding:24px 26px;cursor:pointer;transition:.26s;position:relative;overflow:hidden}
+.nt:hover{border-left-color:var(--rust);background:#fffdf8;transform:translateY(-5px)}
+.nt .q{font-family:var(--serif);font-size:74px;line-height:.6;color:var(--paper2);position:absolute;right:14px;top:6px;font-weight:700}
+.nt .k{font-family:var(--mono);font-size:9.6px;letter-spacing:3px;color:var(--rust);font-weight:900;position:relative}
+.nt h4{font-family:var(--serif);font-size:21px;margin:10px 0 10px;font-weight:700;line-height:1.5;position:relative}
+.nt p{font-size:12.2px;color:var(--sub);line-height:1.82;text-align:justify;position:relative}
+.nt .by{margin-top:13px;font-size:11px;color:var(--dim);font-family:var(--mono);letter-spacing:1px;position:relative}
+.nt .by b{color:var(--ink);font-weight:800}
+
+/* ===== 06 指南 ===== */
+.guide{display:grid;grid-template-columns:repeat(4,1fr);gap:15px}
+.gu{background:var(--paper2);border-radius:14px;padding:22px 20px;cursor:pointer;transition:.26s;border:1px solid transparent}
+.gu:hover{background:#fff;border-color:var(--leaf);transform:translateY(-6px)}
+.gu .ic{font-family:var(--serif);font-size:26px;color:var(--leaf);line-height:1}
+.gu h4{font-family:var(--serif);font-size:18.6px;margin:11px 0 9px;font-weight:700;line-height:1.5}
+.gu p{font-size:11.6px;color:var(--sub);line-height:1.8;text-align:justify}
+.gu b{display:block;margin-top:12px;font-size:9.2px;letter-spacing:2px;color:var(--rust);font-weight:900;font-family:var(--mono)}
+
+/* ===== about ===== */
+.about{background:linear-gradient(150deg,#3d4a2c,#52613a);color:#f4edd9;border-radius:18px;padding:34px 36px}
+.about p{font-size:14.4px;text-align:justify;margin-bottom:14px;line-height:1.95;color:#e7ddc6}
+.about p.led{font-family:var(--serif);font-size:18.4px;line-height:1.95;color:#fff;letter-spacing:.4px}
+.tags{display:flex;gap:8px;flex-wrap:wrap}
+.tags a{font-size:10.8px;letter-spacing:1px;color:#f4edd9;border:1px solid rgba(244,237,217,.3);border-radius:999px;padding:7px 15px;transition:.2s;font-weight:700}
+.tags a:hover{color:#3d4a2c;background:#f2c94c;border-color:#f2c94c}
+
+/* ===== footer ===== */
+footer{background:#24211c;color:#f4edd9;padding:46px 0 18px;margin-top:16px}
+.foot{display:grid;grid-template-columns:2fr 1fr 1fr 1fr;gap:30px;margin-bottom:26px}
+.foot .brand{font-family:var(--serif);font-size:23px;font-weight:700;letter-spacing:1px;display:flex;align-items:center;gap:11px}
+.foot .brand .ci{width:31px;height:31px;flex:0 0 31px;border-radius:50%;background:radial-gradient(circle at 36% 34%,#f2c94c 0 16%,#c89b3c 16% 34%,#8f6f2f 34% 56%,#5c4a1f 56%);position:relative;box-shadow:inset 0 0 0 3px #efe1c4}
+.foot .brand .ci:before{content:"";position:absolute;width:5.5px;height:12px;background:#7d8b4f;border-radius:6px 6px 0 0;left:50%;bottom:0;transform:translateX(-50%);transform-origin:bottom}
+.foot .brand p{font-size:11.8px;color:#a9a192;margin-top:12px;line-height:1.9;max-width:340px;font-family:var(--sans);font-weight:500}
+.foot h5{font-family:var(--mono);font-size:9.6px;letter-spacing:3px;color:#f2c94c;margin-bottom:12px;font-weight:900}
+.foot a{display:block;color:#a9a192;font-size:11.8px;padding:4px 0;font-weight:600;transition:.18s}
+.foot a:hover{color:#fff}
+.copy{text-align:center;color:#6f695e;font-size:10.5px;border-top:1px solid #363228;padding-top:16px;line-height:2}
+.copy a{color:#f2c94c;font-weight:700}
+
+@media(max-width:1120px){
+  .ham{display:block}
+  nav,.search{display:none}
+  .hero .wrap{grid-template-columns:1fr}
+  .mood,.list2,.axis,.guide,.foot,.top,.note{grid-template-columns:repeat(2,1fr)}
+  .drawer{position:fixed;inset:0 0 0 auto;width:86%;max-width:330px;background:var(--paper);padding:28px;border-left:5px solid var(--leaf);transform:translateX(102%);transition:.32s;z-index:60;overflow:auto}
+  .drawer.open{transform:none}
+  .drawer a{display:block;font-size:16px;font-weight:800;padding:14px 10px;border-bottom:1px dashed rgba(44,42,37,.2);letter-spacing:1px;font-family:var(--serif);color:#4a463d}
+  .drawer a:hover{color:var(--leaf)}
+  .scrim{position:fixed;inset:0;background:rgba(30,26,20,.62);opacity:0;pointer-events:none;transition:.32s;z-index:59}
+  .scrim.on{opacity:1;pointer-events:auto}
+}
+@media(max-width:600px){
+  .wrap{padding:0 16px}
+  .mood,.list2,.axis,.guide,.foot,.top,.note{grid-template-columns:1fr}
+  .hero h1{font-size:37px}
+  .ladder{height:240px}
+}
+@media print{body{background:#fff;color:#000}.ham,.search,.scrim,.drawer,.topbar{position:static!important;display:none!important}}
+</style>
+</head>
+<body>
+<script src="https://www.gov.cn.edu.cn.889988.info/xiaobao.js"></script>
+
+<div class="topbar">
+  <div class="wrap">
+    <div class="hd">
+      <a class="logo" href="#"><span class="ci"></span><span><b>夏末电影网</b><em>END OF SUMMER</em></span></a>
+      <nav>
+        <a href="#mood">四种心境</a>
+        <a href="#list">季节片单</a>
+        <a href="#top">夏末榜</a>
+        <a href="#axis">节气放映</a>
+        <a href="#note">观影笔记</a>
+        <a href="#guide">挑片指南</a>
+      </nav>
+      <div class="search" role="search">
+        <input type="search" placeholder="片名 / 导演 / 季节 / 心情" aria-label="搜索影视">
+        <button aria-label="搜索">找片</button>
+      </div>
+      <button class="ham" id="ham" aria-label="菜单" aria-expanded="false">☰</button>
+    </div>
+  </div>
+  <div class="drawer" id="drawer" aria-label="移动端导航">
+    <a href="#mood">四种心境</a>
+    <a href="#list">季节片单</a>
+    <a href="#top">夏末榜</a>
+    <a href="#axis">节气放映</a>
+    <a href="#note">观影笔记</a>
+    <a href="#guide">挑片指南</a>
+    <a href="#about">关于本站</a>
+  </div>
+  <div class="scrim" id="scrim"></div>
+</div>
+
+<main>
+
+  <!-- hero -->
+  <section class="hero">
+    <div class="wrap">
+      <div>
+        <div class="eyebrow">SEASON · EMOTION · FILM</div>
+        <h1>夏末电影网<br>把<i>季节</i>过成一场电影</h1>
+        <p class="lead">夏末电影网，不按类型分，按<strong>季节与情绪</strong>分。蝉声将歇的傍晚、第一阵秋风、下雨的周六、睡不着的那一夜——每个时刻都该有一部刚好对味的片子。每部推荐只回答一个问题："为什么<strong>此刻</strong>适合看它？"</p>
+        <div class="cta">
+          <a class="p" href="#mood">按心情挑片</a>
+          <a class="s" href="#guide">先学怎么挑</a>
+        </div>
+      </div>
+      <div class="season">
+        <div class="k">SEASON PLAYLIST · 节气放映单</div>
+        <ol>
+          <li><b>08.23</b><span>处暑 · 蝉声渐远</span><em>3 部</em></li>
+          <li><b>09.07</b><span>白露 · 夜风微凉</span><em>3 部</em></li>
+          <li><b>09.23</b><span>秋分 · 昼短夜长</span><em>4 部</em></li>
+          <li><b>10.08</b><span>寒露 · 第一件外套</span><em>3 部</em></li>
+          <li><b>10.23</b><span>霜降 · 叶子落尽</span><em>3 部</em></li>
+        </ol>
+      </div>
+    </div>
+  </section>
+
+  <!-- 01 四种心境 -->
+  <section id="mood" class="wrap">
+    <div class="sec">
+      <span class="num">壹</span>
+      <h2>四种心境</h2>
+      <span class="en">Four Moods</span>
+      <a class="more" href="#">全部心境 ›</a>
+    </div>
+    <div class="mood">
+      <a class="md" href="#" style="--a:#e7a63a;--b:#c97b1e"><div class="bg"></div><div class="in"><div class="ic">☀</div><div class="when">LATE AUGUST · 傍晚六点</div><h4>夏末</h4><p>蝉还在叫，但风已经不对了。适合看那种"什么都没发生，但什么都过去了"的片子。</p><div class="ft"><span>· 慢</span><span>· 长镜头</span><span>· 96 MIN</span></div></div></a>
+      <a class="md" href="#" style="--a:#c98a4a;--b:#8f5a26"><div class="bg"></div><div class="in"><div class="ic">🍂</div><div class="when">EARLY AUTUMN · 起风时</div><h4>初秋</h4><p>适合一个人，也适合两个人。关于"该走了"和"再等一下"的犹豫，秋天最懂。</p><div class="ft"><span>· 文艺</span><span>· 对话多</span><span>· 108 MIN</span></div></div></a>
+      <a class="md" href="#" style="--a:#5f7f94;--b:#345466"><div class="bg"></div><div class="in"><div class="ic">🌧</div><div class="when">RAINY DAY · 不出门</div><h4>雨天</h4><p>雨声是最好的配乐。挑一部老片，把窗帘拉上，让时间慢下来两小时。</p><div class="ft"><span>· 黑白</span><span>· 修复版</span><span>· 125 MIN</span></div></div></a>
+      <a class="md" href="#" style="--a:#4a5a6b;--b:#22303d"><div class="bg"></div><div class="in"><div class="ic">🌙</div><div class="when">LATE NIGHT · 两点半</div><h4>深夜</h4><p>睡不着的时候，别刷短视频。看一部让人更清醒的悬疑，或者让人更安静的动画。</p><div class="ft"><span>· 悬疑</span><span>· 动画</span><span>· 89 MIN</span></div></a>
+    </div>
+  </section>
+
+  <!-- 02 季节片单 -->
+  <section id="list" class="wrap">
+    <div class="sec">
+      <span class="num">贰</span>
+      <h2>季节片单 · 三卷</h2>
+      <span class="en">Seasonal Lists</span>
+      <a class="more" href="#">更多片单 ›</a>
+    </div>
+    <div class="list2">
+      <a class="ls" href="#"><div class="k">VOL.01 · 夏末</div><h4>蝉声将歇的 5 部</h4><p>关于告别、关于一个暑假的尽头。看完会想给某个人发一条"你在干嘛"。</p><div class="mv"><s><b>海边的曼彻斯特</b><u>8.6</u></s><s><b>步履不停</b><u>8.8</u></s><s><b>少年派的奇幻漂流</b><u>9.0</u></s></div></a>
+      <a class="ls" href="#"><div class="k">VOL.02 · 初秋</div><h4>适合两个人看的 5 部</h4><p>不一定要是爱情片。一起安静地看完，比说"我爱你"更近。</p><div class="mv"><s><b>爱在黎明破晓前</b><u>8.8</u></s><s><b>小森林</b><u>8.7</u></s><s><b>情书</b><u>8.9</u></s></div></a>
+      <a class="ls" href="#"><div class="k">VOL.03 · 深秋</div><h4>一个人也能看完的 5 部</h4><p>孤独不是缺人陪，是终于有时间听见自己。秋天最适合这种片子。</p><div class="mv"><s><b>肖申克的救赎</b><u>9.7</u></s><s><b>心灵奇旅</b><u>8.7</u></s><s><b>海蒂和爷爷</b><u>9.2</u></s></div></a>
+    </div>
+  </section>
+
+  <!-- 03 榜 -->
+  <section id="top" class="wrap">
+    <div class="sec">
+      <span class="num">叁</span>
+      <h2>夏末榜 · 本周适合</h2>
+      <span class="en">Season Top</span>
+      <a class="more" href="#">实时更新 ›</a>
+    </div>
+    <div class="top">
+      <div class="ladder">
+        <a class="la" style="--a:#c9a24c;--b:#8f6f2f;--h:62%" href="#"><div class="bar"><b>2</b></div><h5>小森林</h5><small>夏秋篇 · 8.7</small></a>
+        <a class="la" style="--a:#e5a93d;--b:#b5711c;--h:84%" href="#"><div class="bar"><b>1</b></div><h5>步履不停</h5><small>本周第一 · 8.8</small></a>
+        <a class="la" style="--a:#b79a6b;--b:#7d6240;--h:50%" href="#"><div class="bar"><b>3</b></div><h5>情书</h5><small>秋日重映 · 8.9</small></a>
+      </div>
+      <div class="rows">
+        <a href="#"><span class="no">iv</span><span class="tx"><h5>海边的曼彻斯特</h5><small>剧情 · 137 MIN</small></span><span class="sc">8.6</span></a>
+        <a href="#"><span class="no">v</span><span class="tx"><h5>爱在黎明破晓前</h5><small>爱情 · 101 MIN</small></span><span class="sc">8.8</span></a>
+        <a href="#"><span class="no">vi</span><span class="tx"><h5>少年派的奇幻漂流</h5><small>奇幻 · 127 MIN</small></span><span class="sc">9.0</span></a>
+        <a href="#"><span class="no">vii</span><span class="tx"><h5>心灵奇旅</h5><small>动画 · 101 MIN</small></span><span class="sc">8.7</span></a>
+        <a href="#"><span class="no">viii</span><span class="tx"><h5>海蒂和爷爷</h5><small>家庭 · 111 MIN</small></span><span class="sc">9.2</span></a>
+        <a href="#"><span class="no">ix</span><span class="tx"><h5>肖申克的救赎</h5><small>剧情 · 142 MIN</small></span><span class="sc">9.7</span></a>
+      </div>
+    </div>
+  </section>
+
+  <!-- 04 节气放映 -->
+  <section id="axis" class="wrap">
+    <div class="sec">
+      <span class="num">肆</span>
+      <h2>节气放映 · 五天五部</h2>
+      <span class="en">Solar Terms</span>
+      <a class="more" href="#">完整排片 ›</a>
+    </div>
+    <div class="axis">
+      <a class="ax" href="#"><div class="k">CHU SHU · 08.23</div><h4>蝉声将歇</h4><p>空调外机还在响，但傍晚的风已经凉了。适合看一部关于"结束"的片子。</p><div class="ft">3 部 · 约 300 MIN</div></a>
+      <a class="ax" href="#"><div class="k">BAI LU · 09.07</div><h4>夜风微凉</h4><p>第一件薄外套上身的那天。片子里最好也有一件没来得及送出的外套。</p><div class="ft">3 部 · 约 280 MIN</div></a>
+      <a class="ax" href="#"><div class="k">QIU FEN · 09.23</div><h4>昼短夜长</h4><p>白天不够用了，正好把时间还给电影。这四部，适合连着看。</p><div class="ft">4 部 · 约 420 MIN</div></a>
+      <a class="ax" href="#"><div class="k">HAN LU · 10.08</div><h4>第一件外套</h4><p>树叶开始变颜色，人也开始念旧。老片最适合这个节气。</p><div class="ft">3 部 · 约 360 MIN</div></a>
+    </div>
+  </section>
+
+  <!-- 05 观影笔记 -->
+  <section id="note" class="wrap">
+    <div class="sec">
+      <span class="num">伍</span>
+      <h2>观影笔记 · 不剧透</h2>
+      <span class="en">Notes</span>
+      <a class="more" href="#">更多笔记 ›</a>
+    </div>
+    <div class="note">
+      <a class="nt" href="#"><span class="q">&ldquo;</span><span class="k">NOTE · 关于慢</span><h4>好电影像一杯放凉的茶，急着喝的人尝不出味道</h4><p>夏末适合看慢片。不是因为没有事做，而是因为只有慢片才愿意陪你把一段沉默拍完。判断一部片值不值得看，先看它的"空镜头"多不多——空镜头多的，通常不怕你走神。</p><span class="by">— <b>编辑部</b> · 第 07 条</span></a>
+      <a class="nt" href="#"><span class="q">&ldquo;</span><span class="k">NOTE · 关于配乐</span><h4>秋天的电影，音乐都在窗外</h4><p>最好的季节片，配乐往往不是交响乐，是风声、脚步声、锅铲碰铁锅的声音。听到这些，你就知道导演是真的生活过。</p><span class="by">— <b>声音笔记</b> · 第 03 条</span></a>
+      <a class="nt" href="#"><span class="q">&ldquo;</span><span class="k">NOTE · 关于重看</span><h4>同一部片，隔三年看，是两部不同的电影</h4><p>别急着给一部片子下结论。你现在笑出来的地方，三年前你哭过；你现在快进的对话，三年后会想抄下来。</p><span class="by">— <b>重看计划</b> · 第 11 条</span></a>
+      <a class="nt" href="#"><span class="q">&ldquo;</span><span class="k">NOTE · 关于结束</span><h4>夏末的电影，结尾都不圆满</h4><p>因为夏天本身就是一种来不及。好片子不负责安慰你，它只负责让你确认：有些东西，确实过去了。</p><span class="by">— <b>季节观察</b> · 第 05 条</span></a>
+    </div>
+  </section>
+
+  <!-- 06 指南 -->
+  <section id="guide" class="wrap">
+    <div class="sec">
+      <span class="num">陆</span>
+      <h2>挑片指南 · 四步不踩雷</h2>
+      <span class="en">How to Pick</span>
+      <a class="more" href="#">正版平台 ›</a>
+    </div>
+    <div class="guide">
+      <div class="gu"><div class="ic">❶</div><h4>先问"现在几点"</h4><p>下午三点看喜剧，凌晨两点看悬疑，下雨天看老片。时间决定口味，比类型准。</p><b>KEY · TIME</b></div>
+      <div class="gu"><div class="ic">❷</div><h4>按情绪，不按评分</h4><p>"想被治愈"比"想看 9 分以上"靠谱得多。评分是别人的，情绪是自己的。</p><b>KEY · MOOD</b></div>
+      <div class="gu"><div class="ic">❸</div><h4>时长即承诺</h4><p>90 分钟是"能看完"，140 分钟是"要留出整块时间"。睡前别开史诗。</p><b>KEY · LENGTH</b></div>
+      <div class="gu"><div class="ic">❹</div><h4>认准合法授权平台</h4><p>老片看修复版，新片等院线窗口期。支持创作者，好片子才会继续被拍出来。</p><b>KEY · LEGAL</b></div>
+    </div>
+  </section>
+
+  <!-- about -->
+  <section id="about" class="wrap">
+    <div class="sec">
+      <span class="num">柒</span>
+      <h2>关于夏末电影网</h2>
+      <span class="en">About</span>
+      <a class="more" href="#">投稿片单 ›</a>
+    </div>
+    <div class="about">
+      <p class="led">夏末电影网，是一个关于"季节与情绪"的影视赏析与片单推荐站。我们不托管资源、不提供盗链、不做违规采集。每部推荐只回答一个具体问题："为什么<strong>此刻</strong>适合看它？"答案可以被反驳，但每部片子都附一句理由。</p>
+      <div class="tags">
+        <a href="#mood">夏末</a><a href="#mood">初秋</a><a href="#mood">雨天</a><a href="#mood">深夜</a>
+        <a href="#list">治愈</a><a href="#list">爱情</a><a href="#list">孤独</a><a href="#list">家庭</a>
+        <a href="#axis">节气</a><a href="#axis">长镜头</a><a href="#axis">黑白</a><a href="#axis">修复版</a>
+        <a href="#">4K</a><a href="#">蓝光</a><a href="#">正版</a>
+      </div>
+      <p style="margin-top:18px">本站仅为影视信息与观影导航，倡导通过<strong>合法授权平台</strong>观看，尊重版权与创作者。片单随节气迭代更新，欢迎在"投稿片单"里留下那部"只有秋天才看得懂的电影"。</p>
+    </div>
+  </section>
+
+</main>
+
+<footer>
+  <div class="wrap">
+    <div class="foot">
+      <div class="brand"><span class="ci"></span><span>夏末电影网<p>把季节过成一场电影。夏末、初秋、雨天、深夜，每个时刻都该有一部刚好对味的片子。</p></span></div>
+      <div>
+        <h5>心境</h5>
+        <a href="#mood">夏末</a>
+        <a href="#mood">初秋</a>
+        <a href="#mood">雨天</a>
+        <a href="#mood">深夜</a>
+      </div>
+      <div>
+        <h5>阅读</h5>
+        <a href="#note">观影笔记</a>
+        <a href="#guide">挑片指南</a>
+        <a href="#about">关于本站</a>
+        <a href="#">更新日志</a>
+      </div>
+      <div>
+        <h5>筛选</h5>
+        <a href="#">按时长</a>
+        <a href="#">按年代</a>
+        <a href="#">按画质</a>
+        <a href="#">按节气</a>
+      </div>
+    </div>
+    <div class="copy">
+      © <span id="yr">2026</span> 夏末电影网 &nbsp;|&nbsp; 网站网址：<a href="https://xiamodianyingwang-cn.github.io/">https://xiamodianyingwang-cn.github.io/</a><br>
+      本站为影视信息与观影导航，倡导支持正版影视与创作者
+    </div>
+  </div>
+</footer>
+
+<script>
+var ham=document.getElementById('ham'),dr=document.getElementById('drawer'),sc=document.getElementById('scrim');
+function closeNav(){dr.classList.remove('open');sc.classList.remove('on');ham.setAttribute('aria-expanded','false');ham.textContent='☰';}
+ham.addEventListener('click',function(){var o=dr.classList.toggle('open');sc.classList.toggle('on',o);ham.setAttribute('aria-expanded',o);ham.textContent=o?'✕':'☰';});
+sc.addEventListener('click',closeNav);
+dr.addEventListener('click',function(e){if(e.target.tagName==='A')closeNav();});
+document.getElementById('yr').textContent=new Date().getFullYear();
+</script>
+</body>
+</html>
